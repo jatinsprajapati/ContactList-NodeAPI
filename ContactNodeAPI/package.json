@@ -1,0 +1,16 @@
+{
+  "name": "contact-node-api",
+  "version": "0.0.0",
+  "description": "ContactNodeAPI",
+  "main": "app.js",
+  "author": {
+    "name": "jatin"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^5.0.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.15.1"
+  }
+}
