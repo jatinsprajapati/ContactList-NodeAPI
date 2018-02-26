@@ -1,6 +1,29 @@
-﻿import http = require('http');
-var port = process.env.port || 1337
-http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello World\n');
-}).listen(port);
+﻿var express = require('express'),
+    app = express(),
+    port = process.env.PORT || 3000
+    mongoose = require('mongoose'),
+    Contact = require('./api/models/contactListModel'),
+    config = require('./Config'),
+    bodyParser = require('body-parser');
+
+    mongoose.Promise = global.Promise;
+    mongoose.connect(config.databaseURL); 
+
+    app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(bodyParser.json());
+    
+    var routes = require('./api/routes/contactListRoutes'); 
+    routes(app); //register the route
+   
+    app.use(function (req, res) {
+        res.status(404).send({ url: req.originalUrl + ' not found' })
+    });
+
+    app.listen(port);
+
+    console.log('Contact list RESTful API server started on: ' + port);
+
+
+
+
+

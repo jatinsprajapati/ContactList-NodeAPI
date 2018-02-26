@@ -1,9 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var http = require("http");
-var port = process.env.port || 1337;
-http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello World\n');
-}).listen(port);
+var express = require('express'), app = express(), port = process.env.PORT || 3000;
+app.listen(port);
+console.log('Contact list RESTful API server started on: ' + port);
 //# sourceMappingURL=server.js.map

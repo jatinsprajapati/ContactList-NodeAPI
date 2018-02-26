@@ -3,12 +3,16 @@
   "version": "0.0.0",
   "description": "ContactNodeAPI",
   "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.ts"
+  },
   "author": {
     "name": "jatin"
   },
   "dependencies": {
     "express": "^4.16.2",
-    "mongoose": "^5.0.7"
+    "mongoose": "^5.0.7",
+    "mongoose-auto-increment": "^5.0.1"
   },
   "devDependencies": {
     "nodemon": "^1.15.1"
